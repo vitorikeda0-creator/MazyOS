@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrossel Completo NEX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #111111;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    /* Layout vertical empilhado para evitar quebras de proporção */
+    .carousel-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding: 40px 0;
+    }
+    
+    /* Base do Slide */
+    .slide {
+      width: 1080px;
+      height: 1350px;
+      padding: 90px 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      flex-shrink: 0; /* Impede o encolhimento do slide */
+    }
+
+    /* Cores de Fundo */
+    .slide.dark {
+      background-color: #000000;
+      color: #FFFFFF;
+    }
+    .slide.light {
+      background-color: #FFFFFF;
+      color: #111111;
+    }
+    .slide.cover {
+      background-size: cover;
+      background-position: center;
+      color: #FFFFFF;
+    }
+
+    /* Top Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 24px;
+    }
+    .slide.dark .header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .slide.light .header {
+      border-bottom: 1px solid #E5E5E7;
+    }
+    .slide.cover .header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    
+    .logo-img {
+      height: 38px;
+      width: auto;
+    }
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+    }
+    .slide.dark .eyebrow {
+      color: #8E8E93;
+    }
+    .slide.light .eyebrow {
+      color: #8E8E93;
+    }
+    .slide.cover .eyebrow {
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .counter {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+    }
+    .slide.dark .counter {
+      color: rgba(255, 255, 255, 0.4);
+    }
+    .slide.light .counter {
+      color: rgba(0, 0, 0, 0.4);
+    }
+    .slide.cover .counter {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Content Area */
+    .content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px 0;
+    }
+
+    .kicker {
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: #D09A94; /* Rosa Destaque */
+      margin-bottom: 16px;
+    }
+    
+    /* Títulos */
+    .title-large {
+      font-size: 80px;
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      margin-bottom: 30px;
+    }
+    .title-large span.highlight {
+      color: #D09A94;
+    }
+    
+    .title {
+      font-size: 64px;
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      margin-bottom: 40px;
+    }
+    .title span.highlight {
+      color: #D09A94;
+    }
+    
+    .divider {
+      width: 70px;
+      height: 4px;
+      background-color: #D09A94;
+      margin-bottom: 30px;
+    }
+
+    /* Subtítulos e Parágrafos */
+    .subtitle {
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+    }
+    .slide.cover .subtitle {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* LIST LAYOUT (Slide 2) */
+    .list-container {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 40px;
+    }
+    .list-item {
+      display: flex;
+      align-items: flex-start;
+      padding: 20px 0;
+      border-bottom: 1px solid #F2F2F7;
+    }
+    .list-item:first-child {
+      border-top: 1px solid #F2F2F7;
+    }
+    .bullet-marker {
+      width: 8px;
+      height: 8px;
+      background-color: #D09A94;
+      border-radius: 50%;
+      margin-top: 10px;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+    .list-text {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: #3A3A3C;
+    }
+    .list-text strong {
+      font-weight: 700;
+      color: #000000;
+    }
+
+    /* Highlight Block */
+    .highlight-block {
+      border-left: 4px solid #D09A94;
+      padding-left: 24px;
+      margin-top: 10px;
+    }
+    .block-kicker {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #D09A94;
+      margin-bottom: 8px;
+    }
+    .block-text {
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.45;
+      color: #1C1C1E;
+      letter-spacing: -0.01em;
+    }
+    .slide.dark .block-text {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* CITAÇÃO LAYOUT (Slide 3) */
+    .quote-container {
+      position: relative;
+      padding: 0 20px;
+    }
+    .quote-large {
+      font-size: 44px;
+      font-weight: 300;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+      position: relative;
+      z-index: 2;
+    }
+    .quote-large strong {
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+    .quote-author {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #D09A94;
+      margin-top: 30px;
+    }
+
+    /* COMPARISON LAYOUT (Slide 4) */
+    .comparison-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
+      margin-top: 10px;
+    }
+    .comparison-col {
+      width: 50%;
+      background: #FAFAFA;
+      border: 1px solid #E5E5E7;
+      border-radius: 12px;
+      padding: 35px;
+    }
+    .comparison-col.featured {
+      background: #FFF9F8;
+      border: 1.5px solid #D09A94;
+    }
+    .col-title {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #E5E5E7;
+      padding-bottom: 12px;
+    }
+    .comparison-col.featured .col-title {
+      color: #D09A94;
+      border-bottom-color: #D09A94;
+    }
+    .col-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .col-item {
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      font-weight: 500;
+      color: #333333;
+    }
+    .col-item span.icon {
+      margin-right: 12px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .col-item span.icon.bad {
+      color: #FF3B30;
+    }
+    .col-item span.icon.good {
+      color: #34C759;
+    }
+
+    /* CTA LAYOUT (Slide 5) */
+    .cta-container {
+      text-align: left;
+    }
+    .cta-logo {
+      margin-bottom: 30px;
+    }
+    .cta-logo img {
+      height: 48px;
+      width: auto;
+    }
+    .cta-title {
+      font-size: 64px;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin-bottom: 20px;
+    }
+    .cta-subtitle {
+      font-size: 24px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.5;
+      margin-bottom: 45px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background-color: #D09A94;
+      color: #FFFFFF;
+      padding: 20px 40px;
+      font-size: 18px;
+      font-weight: 700;
+      border-radius: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+
+    /* Footer Area */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 24px;
+    }
+    .slide.dark .footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .slide.light .footer {
+      border-top: 1px solid #E5E5E7;
+    }
+    .slide.cover .footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    
+    .footer-text {
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .slide.dark .footer-text {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .slide.light .footer-text {
+      color: #111111;
+    }
+    .slide.cover .footer-text {
+      color: rgba(255, 255, 255, 0.85);
+    }
+    
+    .footer-text span.highlight {
+      color: #D09A94;
+    }
+    .handle {
+      font-size: 14px;
+      font-weight: 500;
+      color: #8E8E93;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="carousel-container">
+
+    <!-- SLIDE 1: CAPA (FOTO OVERLAY) -->
+    <div class="slide cover" style="background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.85)), url('../../../identidade/recepcao-minimalista.png');">
+      <div class="header">
+        <img class="logo-img" src="../../../identidade/logo-white.png" alt="NEX Logo">
+        <span class="eyebrow">DIAGNÓSTICO</span>
+      </div>
+      <div class="content">
+        <div class="kicker">MERCADO DE LUXO</div>
+        <h1 class="title-large">O erro visual que <br><span class="highlight">custa consultas</span> à sua clínica.</h1>
+        <div class="divider"></div>
+        <p class="subtitle">Por que a poluição visual do seu site afasta os pacientes de alto padrão.</p>
+      </div>
+      <div class="footer">
+        <p class="footer-text">NEX, <span>experiências digitais premium.</span></p>
+        <span class="handle">arraste para o lado &rarr;</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: O PROBLEMA (LISTA ESTRUTURADA) -->
+    <div class="slide light">
+      <div class="header">
+        <img class="logo-img" src="../../../identidade/logo.png" alt="NEX Logo">
+        <span class="eyebrow">DIAGNÓSTICO</span>
+      </div>
+      <div class="content">
+        <div class="kicker">O PROBLEMA</div>
+        <h2 class="title">A poluição visual <br><span class="highlight">afasta seus pacientes.</span></h2>
+        
+        <div class="list-container">
+          <div class="list-item">
+            <span class="bullet-marker"></span>
+            <p class="list-text"><strong>Excesso de tratamentos:</strong> Tentar mostrar tudo na mesma tela gera confusão visual.</p>
+          </div>
+          <div class="list-item">
+            <span class="bullet-marker"></span>
+            <p class="list-text"><strong>Textos cansativos:</strong> Parágrafos gigantescos que ninguém lê em telas de celular.</p>
+          </div>
+          <div class="list-item">
+            <span class="bullet-marker"></span>
+            <p class="list-text"><strong>Foco disperso:</strong> Botões e links demais competindo pela atenção do paciente.</p>
+          </div>
+        </div>
+
+        <div class="highlight-block">
+          <div class="block-kicker">A REGRA DE OURO</div>
+          <p class="block-text">Se o seu visitante precisa pensar para encontrar o botão de agendamento, você já perdeu a consulta.</p>
+        </div>
+      </div>
+      <div class="footer">
+        <p class="footer-text">NEX, <span>experiências digitais premium.</span></p>
+        <span class="handle">@nex.digital</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: A FILOSOFIA (EDITORIAL/CITAÇÃO) -->
+    <div class="slide dark">
+      <div class="header">
+        <img class="logo-img" src="../../../identidade/logo-white.png" alt="NEX Logo">
+        <span class="eyebrow">A FILOSOFIA</span>
+      </div>
+      <div class="content">
+        <div class="kicker">PRESENÇA DIGITAL</div>
+        <div class="quote-container">
+          <p class="quote-large">
+            "Clínicas investem em decoração impecável, luz natural e recepções luxuosas... <br><br>
+            Mas permitem que a **primeira impressão digital** do paciente seja um site lento e confuso."
+          </p>
+          <div class="quote-author">A RECEPÇÃO DIGITAL DA SUA MARCA</div>
+        </div>
+      </div>
+      <div class="footer">
+        <p class="footer-text">NEX, <span>experiências digitais premium.</span></p>
+        <span class="handle">@nex.digital</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: A SOLUÇÃO (COMPARATIVO EM COLUNAS) -->
+    <div class="slide light">
+      <div class="header">
+        <img class="logo-img" src="../../../identidade/logo.png" alt="NEX Logo">
+        <span class="eyebrow">A SOLUÇÃO</span>
+      </div>
+      <div class="content">
+        <div class="kicker">COMPARAÇÃO</div>
+        <h2 class="title">O poder do <br><span class="highlight">design de conversão.</span></h2>
+        
+        <div class="comparison-grid">
+          <div class="comparison-col">
+            <div class="col-title">Site Tradicional</div>
+            <div class="col-list">
+              <div class="col-item"><span class="icon bad">✕</span> Menu cheio de links</div>
+              <div class="col-item"><span class="icon bad">✕</span> Banner rotativo confuso</div>
+              <div class="col-item"><span class="icon bad">✕</span> Textos e tabelas longas</div>
+              <div class="col-item"><span class="icon bad">✕</span> Lentidão para abrir</div>
+            </div>
+          </div>
+          <div class="comparison-col featured">
+            <div class="col-title">Estilo NEX</div>
+            <div class="col-list">
+              <div class="col-item"><span class="icon good">✓</span> Foco único no agendamento</div>
+              <div class="col-item"><span class="icon good">✓</span> Carregamento em menos de 2s</div>
+              <div class="col-item"><span class="icon good">✓</span> Design limpo e sofisticado</div>
+              <div class="col-item"><span class="icon good">✓</span> Foco em conversão direta</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <p class="footer-text">NEX, <span>experiências digitais premium.</span></p>
+        <span class="handle">@nex.digital</span>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: CTA FINAL (CHAMADA ATIVA) -->
+    <div class="slide dark">
+      <div class="header">
+        <img class="logo-img" src="../../../identidade/logo-white.png" alt="NEX Logo">
+        <span class="eyebrow">PRÓXIMO PASSO</span>
+      </div>
+      <div class="content">
+        <div class="cta-container">
+          <div class="cta-logo">
+            <img src="../../../identidade/logo-white.png" alt="NEX Logo">
+          </div>
+          <h2 class="cta-title">Pronta para elevar o padrão?</h2>
+          <p class="cta-subtitle">Substituímos sites complicados por ativos digitais premium que atraem e convertem pacientes de alto padrão de forma automática.</p>
+          <a href="#" class="cta-btn">Fale com a NEX</a>
+        </div>
+      </div>
+      <div class="footer">
+        <p class="footer-text">NEX, <span>experiências digitais premium.</span></p>
+        <span class="handle">link na bio &rarr;</span>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
-# Catalogo de Ferramentas
+﻿# Catalogo de Ferramentas
 
-Referencia de APIs, CLIs e conectores que podem ser usados dentro de skills do Claude Code.
+Referencia de APIs, CLIs e conectores que podem ser usados dentro de skills do Antigravity.
 Consulte este arquivo antes de criar skills novas pra saber o que ja esta disponivel.
 
 ---
@@ -39,7 +39,7 @@ npx playwright screenshot --viewport-size=1080,1350 --full-page "file:///caminho
 ## Publicar em redes sociais
 
 ### Post for Me API
-**O que faz:** Publica posts no Instagram e TikTok direto do Claude Code
+**O que faz:** Publica posts no Instagram e TikTok direto do Antigravity
 **Precisa de conta:** Sim, postforme.dev
 **Configurar:** Salvar `POSTFORME_API_KEY` no `.env`
 **Como usar numa skill:**
@@ -54,12 +54,12 @@ node --env-file=.env scripts/publish-postforme.js
 
 ### WebFetch (nativo)
 **O que faz:** Le o conteudo de qualquer URL e traz como texto
-**Precisa de conta:** Nao, ja vem no Claude Code
+**Precisa de conta:** Nao, ja vem no Antigravity
 **Quando usar:** Pesquisa de referencias, ler artigos, buscar dados de sites
 
 ### WebSearch (nativo)
 **O que faz:** Pesquisa no Google e traz resultados
-**Precisa de conta:** Nao, ja vem no Claude Code
+**Precisa de conta:** Nao, ja vem no Antigravity
 **Quando usar:** Quando o usuario precisa pesquisar antes de criar conteudo
 
 ### Jina Reader
@@ -101,27 +101,27 @@ brew install yt-dlp
 
 ## Conectar com plataformas (MCPs)
 
-MCPs sao conectores que dao acesso direto a plataformas dentro do Claude Code.
-O Claude passa a usar esses conectores automaticamente quando fizer sentido.
+MCPs sao conectores que dao acesso direto a plataformas dentro do Antigravity.
+O Antigravity passa a usar esses conectores automaticamente quando fizer sentido.
 
-Pra verificar quais MCPs ja estao instalados: `claude mcp list`
-Pra remover um MCP: `claude mcp remove nome-do-mcp`
+Pra verificar quais MCPs ja estao instalados: `Antigravity mcp list`
+Pra remover um MCP: `Antigravity mcp remove nome-do-mcp`
 
 ### Notion
 **O que faz:** Acessa projetos, bases de dados, briefings e tarefas do Notion
 **Precisa de conta:** Sim, API key em notion.so/my-integrations
 **Como instalar:**
 ```bash
-claude mcp add notion -- npx -y @notionhq/notion-mcp-server
+Antigravity mcp add notion -- npx -y @notionhq/notion-mcp-server
 ```
 **Quando usar:** Skills que precisam ler/escrever tarefas, bases de clientes, documentos
 
 ### Gmail
-**O que faz:** Le e compoe emails sem sair do Claude Code
+**O que faz:** Le e compoe emails sem sair do Antigravity
 **Precisa de conta:** Sim, OAuth Google
 **Como instalar:**
 ```bash
-claude mcp add gmail -- npx -y @gongrzhe/server-gmail-autoauth-mcp
+Antigravity mcp add gmail -- npx -y @gongrzhe/server-gmail-autoauth-mcp
 ```
 **Quando usar:** Skills de email, follow-up, comunicacao com clientes
 
@@ -130,16 +130,16 @@ claude mcp add gmail -- npx -y @gongrzhe/server-gmail-autoauth-mcp
 **Precisa de conta:** Sim, OAuth Google
 **Como instalar:**
 ```bash
-claude mcp add google-calendar -- npx -y @gongrzhe/server-google-calendar-autoauth-mcp
+Antigravity mcp add google-calendar -- npx -y @gongrzhe/server-google-calendar-autoauth-mcp
 ```
 **Quando usar:** Skills de agendamento, planejamento, organizacao de reunioes
 
 ### Canva
-**O que faz:** Acessa designs, cria novos assets visuais direto pelo Claude
+**O que faz:** Acessa designs, cria novos assets visuais direto pelo Antigravity
 **Precisa de conta:** Sim, Canva Pro
 **Como instalar:**
 ```bash
-claude mcp add canva -- npx -y @canva/canva-mcp-server
+Antigravity mcp add canva -- npx -y @canva/canva-mcp-server
 ```
 **Quando usar:** Skills de design, criacao visual, materiais de marca
 
@@ -158,7 +158,7 @@ claude mcp add canva -- npx -y @canva/canva-mcp-server
 **Precisa de conta:** Sim, instancia N8N + API key
 **Como instalar:**
 ```bash
-claude mcp add n8n -- npx -y n8n-mcp
+Antigravity mcp add n8n -- npx -y n8n-mcp
 ```
 **Quando usar:** Skills que precisam disparar automacoes externas
 
@@ -186,3 +186,4 @@ Se voce usa uma API ou ferramenta que nao esta nessa lista, adicione aqui seguin
 **Como usar numa skill:** [comando ou instrucao]
 **Quando usar:** [em que tipo de skill faz sentido]
 ```
+

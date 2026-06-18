@@ -1,4 +1,4 @@
-# Sistema operacional
+﻿# Sistema operacional
 .DS_Store
 Thumbs.db
 
@@ -6,13 +6,13 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Claude Code (sessões locais, não devem ir pro repo)
-.claude/projects/
-.claude/sessions/
-.claude/shell-snapshots/
-.claude/telemetry/
-.claude/file-history/
-.claude/backups/
+# Antigravity (sessões locais, não devem ir pro repo)
+.antigravity/projects/
+.antigravity/sessions/
+.antigravity/shell-snapshots/
+.antigravity/telemetry/
+.antigravity/file-history/
+.antigravity/backups/
 
 # Dependências
 node_modules/
@@ -24,3 +24,4 @@ node_modules/
 # Drop zone do usuário (só o README vai versionado)
 dados/*
 !dados/README.md
+

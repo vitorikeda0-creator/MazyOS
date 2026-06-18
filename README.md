@@ -1,6 +1,6 @@
-# MazyOS
+﻿# MazyOS
 
-> O sistema operacional do seu negócio dentro do Claude Code.
+> O sistema operacional do seu negócio dentro do Antigravity.
 
 Você acaba de instalar o MazyOS. Em alguns minutos, sua empresa vai
 ter uma memória própria, uma identidade visual aplicada em tudo que
@@ -15,9 +15,9 @@ Bora voar.
 
 Dois caminhos. Escolhe o que combina contigo.
 
-### Pelo Claude (mais rápido)
+### Pelo Antigravity (mais rápido)
 
-Abre o Claude Code em qualquer pasta e cola:
+Abre o Antigravity em qualquer pasta e cola:
 
 ```
 Clona o https://github.com/mazzeoia/MazyOS.git na pasta atual,
@@ -35,7 +35,7 @@ cd MazyOS
 code .
 ```
 
-Na janela do VS Code que abrir: terminal integrado → `claude` → `/instalar`.
+Na janela do VS Code que abrir: terminal integrado → `Antigravity` → `/instalar`.
 
 ---
 
@@ -94,7 +94,7 @@ O sistema não substitui você. Vira parte da sua empresa.
 ## Como o MazyOS pensa
 
 `_memoria/` é o cérebro. Tudo que importa do seu negócio mora aqui —
-quem é a empresa, como ela fala, o que tá em foco essa semana. O Claude
+quem é a empresa, como ela fala, o que tá em foco essa semana. O Antigravity
 lê isso antes de cada resposta. Quanto melhor a memória, melhor o sistema.
 
 `identidade/` é o rosto. Cores, fontes, logo, padrão visual. Todo
@@ -108,3 +108,4 @@ versiona no GitHub, fica tudo seu.
 ## Quando precisar
 
 [mazzeoia.com.br](https://mazzeoia.com.br)
+

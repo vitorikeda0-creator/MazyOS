@@ -1,4 +1,4 @@
-# marketing/ — saídas do MazyOS
+﻿# marketing/ — saídas do MazyOS
 
 Tudo que as skills de marketing produzem cai aqui. Skills do MazyOS já sabem onde salvar — você raramente precisa criar pasta manualmente.
 
@@ -42,3 +42,4 @@ marketing/
 ## Versionamento
 
 Tudo aqui versiona no git pelo `/salvar`. Útil pra comparar evolução de SEO entre meses, rever copies antigas, ou recuperar peça depois de mexer no Insta.
+

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>NEX Slide Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #F3F3F5;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .slide {
+      width: 1080px;
+      height: 1350px;
+      background-color: #FFFFFF;
+      color: #111111;
+      padding: 90px 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    }
+
+    /* Top Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #E5E5E7;
+      padding-bottom: 24px;
+    }
+    .logo-img {
+      height: 38px;
+      width: auto;
+    }
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: #8E8E93;
+    }
+
+    /* Content Area */
+    .content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px 0;
+    }
+
+    .kicker {
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: #D09A94; /* Rosa Seco no Kicker */
+      margin-bottom: 16px;
+    }
+    
+    .title {
+      font-size: 64px;
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      color: #000000;
+      margin-bottom: 40px;
+    }
+    
+    .title span.highlight {
+      color: #D09A94; /* Rosa Seco no Destaque do Título */
+    }
+
+    /* Bullet List with Thin Separators */
+    .list-container {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 50px;
+    }
+    .list-item {
+      display: flex;
+      align-items: flex-start;
+      padding: 20px 0;
+      border-bottom: 1px solid #F2F2F7;
+    }
+    .list-item:first-child {
+      border-top: 1px solid #F2F2F7;
+    }
+    .bullet-marker {
+      width: 8px;
+      height: 8px;
+      background-color: #D09A94; /* Rosa Seco nos Marcadores */
+      border-radius: 50%;
+      margin-top: 10px;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+    .list-text {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: #3A3A3C;
+    }
+    .list-text strong {
+      font-weight: 700;
+      color: #000000;
+    }
+
+    /* Highlight Block / Rule of Gold */
+    .highlight-block {
+      border-left: 4px solid #D09A94; /* Rosa Seco na Borda Lateral */
+      padding-left: 24px;
+      margin-top: 10px;
+    }
+    .block-kicker {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #D09A94; /* Rosa Seco no Kicker do Bloco */
+      margin-bottom: 8px;
+    }
+    .block-text {
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.45;
+      color: #1C1C1E;
+      letter-spacing: -0.01em;
+    }
+
+    /* Footer area */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #E5E5E7;
+      padding-top: 24px;
+    }
+    .footer-text {
+      font-size: 15px;
+      font-weight: 600;
+      color: #111111;
+    }
+    .footer-text span.highlight {
+      color: #D09A94; /* Rosa Seco na Assinatura */
+    }
+    .handle {
+      font-size: 14px;
+      font-weight: 500;
+      color: #8E8E93;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slide">
+    <!-- Header -->
+    <div class="header">
+      <img class="logo-img" src="../../../identidade/logo.png" alt="NEX Logo">
+      <span class="eyebrow">DIAGNÓSTICO</span>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+      <div class="kicker">O PROBLEMA</div>
+      <h2 class="title">A poluição visual <br><span class="highlight">afasta seus pacientes.</span></h2>
+      
+      <!-- List -->
+      <div class="list-container">
+        <div class="list-item">
+          <span class="bullet-marker"></span>
+          <p class="list-text"><strong>Excesso de tratamentos:</strong> Tentar mostrar tudo na mesma tela gera confusão visual.</p>
+        </div>
+        <div class="list-item">
+          <span class="bullet-marker"></span>
+          <p class="list-text"><strong>Textos cansativos:</strong> Parágrafos gigantescos que ninguém lê em telas de celular.</p>
+        </div>
+        <div class="list-item">
+          <span class="bullet-marker"></span>
+          <p class="list-text"><strong>Foco disperso:</strong> Botões e links demais competindo pela atenção do paciente.</p>
+        </div>
+      </div>
+
+      <!-- Highlight Block -->
+      <div class="highlight-block">
+        <div class="block-kicker">A REGRA DE OURO</div>
+        <p class="block-text">Se o seu visitante precisa pensar para encontrar o botão de agendamento, você já perdeu a consulta.</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p class="footer-text">NEX, <span>experiências digitais premium.</span></p>
+      <span class="handle">@nex.digital</span>
+    </div>
+  </div>
+
+</body>
+</html>

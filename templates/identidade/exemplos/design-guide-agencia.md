@@ -52,3 +52,4 @@ Dark e bold. Interface de agência de performance: sem frescura, sem decoração
 - **Versão pra fundo claro:** identidade/logo-dark.svg
 - **Onde usar:** slide final do carrossel (CTA), header de propostas, slides de apresentação
 - **Tamanho sugerido:** largura entre 120-200px nos HTMLs
+

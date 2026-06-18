@@ -1,4 +1,4 @@
-# scripts/ — utilitários do MazyOS
+﻿# scripts/ — utilitários do MazyOS
 
 Scripts Node.js e Python que as skills chamam quando precisam fazer coisas fora do alcance da IA pura (gerar imagem, postar em rede social, renderizar HTML em PNG).
 
@@ -40,7 +40,7 @@ npx playwright install chromium
 
 ## Como o MazyOS lida com isso
 
-Quando você roda uma skill que precisa de script ausente, o Claude vai:
+Quando você roda uma skill que precisa de script ausente, o Antigravity vai:
 
 1. Detectar que falta o script
 2. Te perguntar se quer configurar agora
@@ -49,3 +49,4 @@ Quando você roda uma skill que precisa de script ausente, o Claude vai:
 5. Rodar a skill
 
 Você não precisa decorar nada. Roda a skill, segue o fluxo.
+

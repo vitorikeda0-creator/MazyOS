@@ -1,0 +1,24 @@
+{
+  "name": "n-e-x",
+  "version": "1.0.0",
+  "description": "> O sistema operacional do seu negócio dentro do Antigravity.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mazzeoia/MazyOS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mazzeoia/MazyOS/issues"
+  },
+  "homepage": "https://github.com/mazzeoia/MazyOS#readme",
+  "dependencies": {
+    "playwright": "^1.61.0"
+  }
+}

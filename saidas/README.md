@@ -1,4 +1,4 @@
-# saidas/ — outputs gerais do MazyOS
+﻿# saidas/ — outputs gerais do MazyOS
 
 Pasta pra qualquer output que não é marketing puro (não cabe em `marketing/`).
 
@@ -27,3 +27,4 @@ Skills sabem onde salvar — você não precisa criar subpasta manualmente. Se u
 `saidas/` é "coisa pontual gerada hoje" — relatório que você manda pro cliente e nunca mais olha, rascunho de email que copia e cola no Gmail.
 
 A divisão importa pra `/salvar` (commit) e pra clareza ao navegar a pasta.
+

@@ -52,3 +52,4 @@ Quente, humano e editorial. Tons terrosos com fundo off-white. Parece um livro b
 - **Versão pra fundo escuro:** identidade/logo-branco.png
 - **Onde usar:** slide final do carrossel (CTA), header de propostas, slides de apresentação
 - **Tamanho sugerido:** largura entre 120-200px nos HTMLs
+
